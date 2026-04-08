@@ -27,3 +27,5 @@ src : https://cloudinary.com/guides/image-effects/how-to-set-up-image-registrati
 
 Goal is to make a pipeline-agnostic post processing tool. Should ONLY be using CT data for a sanity check--
 everything else should be sourced from the MRI files.
+
+env bigpython 3.13 works with python3 -m pip install nibabel
