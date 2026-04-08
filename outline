@@ -1,0 +1,26 @@
+Structure Notes
+
+1. Deformable registration
+  a. CNN
+    i. Generate target edge map and source edge map
+    ii. Register source map to match target, obtain deformation map
+    iii. Apply deformation to sCT. SSIM, MSE, maybe dice score?
+src : https://www.theodo.com/en-fr/blog/how-to-create-deformable-image-registration-using-deep-learning
+src : https://colab.research.google.com/drive/1WiqyF7dCdnNBIANEY80Pxw_mVz4fyV-S?usp=sharing
+  b. B-Splines/SimpleITK or itk-elastix OR ANTsPy (ANTS looks like best move)
+    i. Generate target edge map and source edge map
+    ii. Use ANTS to register images, obtain deformation/jacobian info
+    iii. Image similarity metrics
+src : https://stackoverflow.com/questions/70170117/dicom-deformable-image-registration
+src : https://www.biorxiv.org/content/10.1101/2025.08.11.669599v1.full
+src : https://antspy.readthedocs.io/en/latest/registration.html
+src : https://antspyx.readthedocs.io/en/latest/api/ants.math.image_similarity.html
+2. Edge-aware region growing
+  a. Iterative dilation/erosion with snakes
+    i. Generate target edge map and source edge map
+    i. Use prebuilt to process using active contours
+    i. Register source to target, apply rotations as well to sCT image, image similarity metrics.
+src : https://scikit-image.org/docs/stable/auto_examples/edges/plot_active_contours.html
+src : https://stackoverflow.com/questions/18972932/image-segmentation-based-on-edge-pixel-map
+src : https://cloudinary.com/guides/image-effects/how-to-set-up-image-registration-in-python
+  b. ???? add if you need more methods
