@@ -12,7 +12,7 @@ from matplotlib import pyplot as plt
 # slice_idx = data.shape[2] // 2
 # mri_slice = data[:, :, slice_idx]
 
-mri_slice = cv2.imread('coins.png')
+mri_slice = cv2.imread('fixa.png')
 
 # Normalize the data to 0-255 for OpenCV
 mri_slice_norm = cv2.normalize(mri_slice, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
